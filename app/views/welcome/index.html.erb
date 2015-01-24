@@ -1,1 +1,5 @@
-Welcome to SongWookie
+
+
+ <%= link_to "Create Profile", new_user_registration_path(@user) %>
+ <%= link_to "Log in", new_user_session_path(@user) %><br />
+ <%= link_to "Log out", destroy_user_session_path(@user), :method => :delete %>
