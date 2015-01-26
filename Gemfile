@@ -33,7 +33,11 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 
 gem 'devise'
-gem 'factory_girl_rails'
+# gem 'factory_girl_rails'
+
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'bootstrap_form'
+gem 'autoprefixer-rails'
 
 
 group :development, :test do

@@ -1,0 +1,149 @@
+
+body{ 
+	padding-top: 50px;
+background-image: url(headphone.jpg);
+background-position: center;
+-webkit-animation: fadein 2s;
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.app_name {
+	font-size: 50px;
+	font-weight: 100;
+	color: white;
+}
+.navbar{ opacity: 0.7;}
+
+.row-logout {
+	margin-top: 20px;
+}
+
+.row-logout input {
+	padding: 10px;
+	border-radius: 10px;
+	opacity: 0.8;
+	color: white;
+}
+
+/*.row-logout input:hover {
+	opacity: 1;
+	font-size: 15px;
+	color: black;
+	opacity: 0.5;
+}*/
+
+.mainsection {
+	margin-top: 10px;
+}
+
+
+.mainsection p {
+	text-align: 0 auto;
+	font-size: 20px;
+	font-weight: 200;
+
+}
+
+.welcome{	font-size: 50px;
+	font-weight: 100;
+	color: black;
+}
+
+.app_name {
+	font-size: 55px;
+	font-weight: 150;
+	color: white;
+}
+
+.footer {
+	background-color: black;
+	opacity: 0.6;
+}
+
+p.text-muted {
+	text-align: center;
+	color: white;
+	opacity: 1;
+	
+	
+
+}
+.text-muted:hover {
+	font-weight: bold;
+	font-color: red;
+
+}
+
+.searchpanel {
+	opacity: 0.5;
+	background-color: black;
+	padding: 10px;
+	margin-top: 20px;
+	border: 5px solid white;
+}
+.searchpanel h3 {
+	padding: 10px;
+	opacity: 1;
+	font-size: 30px;
+	color: white;
+	font-weight: 200;
+
+
+}
+
+.searchpanel input {
+	opacity: 0.8;
+	padding: 5px;
+	color: black;
+	font-weight: bold;
+
+}
+
+.searchpanel h3:hover {
+	font-weight: 300;
+	font-size: 35px;
+	font-decoration: none;
+}
+
+.carousel {
+	margin-top: 30px;
+	opacity:0.9 ;
+	
+	padding:10px;
+}
+
+.carousel-img {
+	max-height: 299px;
+	width: 800px;
+}
+
+.carousel-caption h3 {
+	font-weight: 200;
+	opacity: 0.8;
+	color: orange;
+}
+
+.sign-in-panel{
+	margin-top: 50px;
+	padding: 20px;
+	opacity: 0.7;
+	background-color: black;
+	border: 2px black solid;
+}
+
+.sign-in-panel h2 {
+	color: purple;
+	font-weight: 200;
+	font-size: 36px;
+	margin-bottom: 20px;
+}
+
+.sign-in-panel .btn:hover {
+	opacity: 1;
+	font-size: 1.5em;
+
+}
