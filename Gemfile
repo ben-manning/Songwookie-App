@@ -34,6 +34,10 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'devise'
 gem 'rspotify'
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'bootstrap_form'
+gem 'autoprefixer-rails'
+
 
 
 group :development, :test do
