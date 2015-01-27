@@ -1,6 +1,6 @@
 <h1>Welcome to SongWookie search for a song</h1>
-<%= form_tag artists_path, method: "get" do %>
-  <%= text_field_tag(:artist_name) %>
+<%= form_tag songs_path, method: "get" do %>
+  <%= text_field_tag(:song_name) %>
   <%= submit_tag("Search") %>
 <% end %>
 

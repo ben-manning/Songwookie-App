@@ -4,8 +4,11 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
-  get '/artists', to: 'artists#index'
-  get '/artists/:id', to:'artists#show', as: 'artist'
+  # Here we would replace the following with get '/songs', to: 'songs#index'
+  get '/songs', to: 'songs#index'
+
+  # Here we would replace the following with get '/songs/:id' to: 'songs/show, as 'song'
+  get '/songs/:id', to:'songs#show', as: 'song'
 
 
   # Example of regular route:
