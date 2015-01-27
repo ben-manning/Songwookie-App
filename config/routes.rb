@@ -13,12 +13,12 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  #root 'welcome#index'
   # Here we would replace the following with get '/songs', to: 'songs#index'
-  get '/songs', to: 'songs#index'
+  ##get '/songs', to: 'songs#index'
 
   # Here we would replace the following with get '/songs/:id' to: 'songs/show, as 'song'
-  get '/songs/:id', to:'songs#show', as: 'song'
+  #get '/songs/:id', to:'songs#show', as: 'song'
 
 
   # Example of regular route:

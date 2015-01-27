@@ -1,9 +1,5 @@
 class SongsController < ApplicationController
 
-	def index
-	end
-end
-
   def index
   	@songs = RSpotify::Track.search(params[:song_name])
   end

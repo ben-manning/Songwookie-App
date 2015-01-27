@@ -33,7 +33,7 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 
 gem 'devise'
-gem 'factory_girl_rails'
+gem 'rspotify'
 
 
 group :development, :test do
