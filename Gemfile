@@ -33,8 +33,6 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 
 gem 'devise'
-gem 'factory_girl_rails'
-
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -42,6 +40,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers', require: false
+  gem 'simplecov', :require => false, :group => :test
 
 
   # Access an IRB console on exception pages or by using <%= console %> in views
