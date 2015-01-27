@@ -16,7 +16,15 @@ background-position: center;
 	font-weight: 100;
 	color: white;
 }
-.navbar{ opacity: 0.7;}
+.navbar{ opacity: 0.7;
+height: 180px;
+font-size: 20px;
+font-weight: 100}
+
+.navbar li{
+	
+	margin-top: 20px;
+}
 
 .row-logout {
 	margin-top: 20px;
@@ -38,19 +46,21 @@ background-position: center;
 
 .mainsection {
 	margin-top: 10px;
+	margin-bottom: 50px;
 }
 
 
-.mainsection p {
+/*.mainsection p {
 	text-align: 0 auto;
 	font-size: 20px;
 	font-weight: 200;
 
-}
+}*/
 
 .welcome{	font-size: 50px;
 	font-weight: 100;
-	color: black;
+	color: yellow;
+	margin-bottom: 20px;
 }
 
 .app_name {
@@ -68,6 +78,7 @@ p.text-muted {
 	text-align: center;
 	color: white;
 	opacity: 1;
+	font-weight: 100;
 	
 	
 
@@ -78,7 +89,7 @@ p.text-muted {
 
 }
 
-.searchpanel {
+/*.searchpanel {
 	opacity: 0.5;
 	background-color: black;
 	padding: 10px;
@@ -107,11 +118,11 @@ p.text-muted {
 	font-weight: 300;
 	font-size: 35px;
 	font-decoration: none;
-}
+}*/
 
 .carousel {
-	margin-top: 30px;
-	opacity:0.9 ;
+	margin-top: 50px;
+	opacity:0.7 ;
 	
 	padding:10px;
 }
@@ -146,4 +157,22 @@ p.text-muted {
 	opacity: 1;
 	font-size: 1.5em;
 
+}
+
+.password-forgot {
+	color: orange;
+	font-weight: 200;
+}
+
+.password-forgot .btn {
+	margin-bottom: 20px;
+}
+
+.shared-links {
+	font-weight: 100;
+	font-size: 1.5em;
+}
+
+.main-profile-row	{
+	border-right: 1px white solid;
 }
