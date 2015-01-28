@@ -7,6 +7,13 @@ Rails.application.routes.draw do
     resources :favorites, only: [:index, :new, :create, :destroy]
   end
 
+  resources :songs do
+    member do
+      put "upvote" => "songs#upvote"
+      put "downvote" => "songs#downvote"
+    end
+  end
+
   get '/songs' => 'songs#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
