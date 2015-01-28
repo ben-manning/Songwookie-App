@@ -2,8 +2,17 @@
 
 <ul>
   <% @songs.each do |track| %>
-    <li> <img src="<%= track.album.images.first['url'] %>"> | <%= track.name %> | <%= track.album.name %> | <a href=<%="https://open.spotify.com/track/" + track.id %>>Listen Here</a>
-		<%= link_to "favorite", user_favorites_path, method: :post %>
-	</li>
+    <li>
+      <img src="<%= track.album.images.first['url'] %>"> | <%= track.name %> | <%= track.album.name %> | <%= track.artists.first.name %> | <a href=<%="https://open.spotify.com/track/" + track.id %>>Listen Here</a>
+
+      <%= form_for @song, url: { controller: :favorites, action: :create }, remote: true do |f| %>
+        <%= f.hidden_field :song_name, :value => track.name  %>
+        <%= f.hidden_field :artist_name, :value => track.artists.first.name  %>
+        <%= f.hidden_field :album_art, :value => track.album.images.first['url'] %>
+        <%= f.hidden_field :preview_url, :value => track.uri %>
+        <%= f.submit "Favorite" %>
+      <% end %>
+
+    </li>
   <% end %> 
 </ul>
