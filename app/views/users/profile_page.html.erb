@@ -10,11 +10,11 @@
 
           </li>
 
-          <li> <%=link_to("Trending Music!", songs_path)  %>
+          <li> <%=link_to("Trending Music!", root_path)  %>
            
           </li>
 
-          <li> <%=link_to("Add favorites!", new_user_favorite_path(current_user))  %>
+          <li> <%=link_to("Your favorites!", root_path)  %>
            
           </li>
 
@@ -29,10 +29,31 @@
       </div>
 </nav>
 
-<div class="search-song">
-<h1>Welcome to SongWookie search for a song</h1>
-<%= form_tag user_favorites_path, method: "get" do %>
-  <%= text_field_tag(:song_name) %>
-  <%= submit_tag("Search") %>
+<div class="row main-profile-row">
+  <div class="col-md-9 main-profile-content">
+    <div class="search-song">
+      <%= simple_form_for :songquery, :method => 'get', 
+    :html => { :class => 'form-search' } do |f| %>
+  <%= f.input_field :search, :placeholder => "Search your favorite music!", 
+      :class => "input-medium search-query" %>
+  <%= f.submit "Search!", :class => "btn" %>
 <% end %>
+    </div>
+  </div>
+  <div class="col-md-3 sidebar-content">
+    
+  </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
