@@ -225,7 +225,6 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootstrap-sass (~> 3.2.0)
   bootstrap_form
->>>>>>> 930337155df2ddd956756312a3070a8bae159720
   byebug
   coffee-rails (~> 4.1.0)
   devise
