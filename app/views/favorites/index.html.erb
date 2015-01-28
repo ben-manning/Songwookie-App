@@ -1,0 +1,9 @@
+<h1>Tracks Matching <%= params[:song_name] %></h1>
+
+<ul>
+<% @songs.each do |track| %>
+<li><%= track.name %> | <a href=<%="https://open.spotify.com/track/" + track.id %>>Listen Here</a>
+<%= link_to "favorite", user_favorites_path, method: :post %>
+</li>
+<% end %> 
+</ul>

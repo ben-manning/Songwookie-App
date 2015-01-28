@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-md-4 col-md-offset-2">
+        <div class="panel sign-in-panel">
+          <div class="panel-heading">
+          <center>
+          <!-- <span class="glyphicon glyphicon-music"></span><br> -->
+          <h2 class="panel-title">Create Profile</h2> </center>
+        </div>
+
+<%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+
+  <fieldset><center> 
+  <%= devise_error_messages! %>
+  <%= f.text_field :username %>
+  <%= f.email_field :email %>
+  <% if @validatable %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %>
+    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+            
+            <%= f.submit "Register", :class => 'btn btn-info btn-lg' %></center>
+            
+
+             <%= render "devise/shared/links" %>
+        </fieldset>
+      <% end %>
+
+
+</div>
+</div>
+
+  
+
+  
