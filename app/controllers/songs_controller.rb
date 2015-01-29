@@ -1,11 +1,11 @@
 class SongsController < ApplicationController
 
   def index
-  	@songs = RSpotify::Track.search(params[:song_name])
+  	@trending = Song.all.sample(4)
   end
 
-  def show
-  	@song = RSpotify::Track.find(params[:id])
-  end
+  # def show
+  # 	@song = RSpotify::Track.find(params[:id])
+  # end
 end
 

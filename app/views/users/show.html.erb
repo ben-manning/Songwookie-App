@@ -6,7 +6,7 @@
         <div id="navbar profile" class="collapse navbar-collapse">
           <ul class="nav navbar-nav pull-right">
 
-          <li> <%=link_to("Home", root_path)  %>
+          <li> <%=link_to("Home", user_path(current_user))  %>
 
           </li>
 
@@ -31,6 +31,13 @@
 
 
 
+
+
+<% @songs.each do |track| %>
+  <li> 
+      <%= track.song_name %>
+  </li>
+<% end %>
 
 
 
