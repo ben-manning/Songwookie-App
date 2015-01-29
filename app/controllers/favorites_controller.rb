@@ -1,7 +1,8 @@
 class FavoritesController < ApplicationController
   before_action :authenticate_user!
   def new
-		
+		@favorite = Favorite.new(user_id: params[:user_id])
+    authorize @favorite
   end
 
   def index
