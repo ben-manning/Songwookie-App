@@ -18,11 +18,6 @@ class SongsController < ApplicationController
     redirect_to songs_path
   end
 
-  def downvote
-    @song.downvote_from current_user
-    redirect_to songs_path
-  end
-
   private
     def set_song
       @song = Song.find(params[:id])
@@ -33,4 +28,3 @@ class SongsController < ApplicationController
     end
 
 end
-
