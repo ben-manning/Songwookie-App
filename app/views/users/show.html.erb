@@ -1,4 +1,4 @@
-<!-- <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
           <a class="navbar-brand" href="/">Song Wookie!</a>
@@ -27,20 +27,20 @@
         </ul>
         </div>
       </div>
-</nav> -->
+</nav> 
 
 
 
 
+<div class="favorites-show"></div>
+  <% @songs.each do |track| %>
+    <li> 
+        <%= track.song_name %>
+        <%= link_to "Delete", user_favorite_path(current_user, :id => track.id), method: :delete, data: { confirm: "Really?"  } %>
+    </li>
+  <% end %>
 
-<% @songs.each do |track| %>
-  <li> 
-      <%= track.song_name %>
-      <%= link_to "Delete", user_favorite_path(current_user, :id => track.id), method: :delete, data: { confirm: "Really?"  } %>
-  </li>
-<% end %>
-
-
+</div>
 
 
 
