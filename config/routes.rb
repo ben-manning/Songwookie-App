@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/welcome/index' => 'welcome#index' 
 
   resources :users, only: :show do
-    resources :favorites, only: [:index, :new, :create, :destroy]
+  resources :favorites, only: [:index, :new, :create, :destroy]
   end
 
   get '/songs' => 'songs#index'

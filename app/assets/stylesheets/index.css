@@ -176,3 +176,12 @@ p.text-muted {
 .main-profile-row	{
 	border-right: 1px white solid;
 }
+
+.search-song , .search-list-div {
+	
+	margin-top: 200px;
+}
+
+.results-list img {
+	height: 50px;
+}
