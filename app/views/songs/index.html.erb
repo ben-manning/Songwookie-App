@@ -48,11 +48,13 @@
             <h4><%= trend.artist_name %></h4>
 
             <iframe src=<%="https://embed.spotify.com/?uri=" + trend.preview_url%> width="225" height="80" frameborder="0" allowtransparency="true" float="center"></iframe>
+            <div class ="trending-buttons" style="margin-top: 15px;">
+              <%= link_to "Delete", user_favorite_path(current_user, :id => trend.id), method: :delete, :class => "btn btn-warning btn-left", data: { confirm: "Really?"  } %>
 
-            <%= link_to "Delete", user_favorite_path(current_user, :id => trend.id), method: :delete, :class => "btn btn-warning", data: { confirm: "Really?"  } %>
-            <%= link_to upvote_song_path(:id => trend.id), class: "upvote", method: :put do %>
-               <span class="badge"><%= trend.get_upvotes.size %></span>
-            <% end %>  
+              <%= link_to upvote_song_path(:id => trend.id), class: "upvote btn btn-info btn-right", method: :put do %>
+                 <span class="badge"><%= trend.get_upvotes.size %></span>
+              <% end %> 
+            </div> 
           </div>
       </div>
       </fieldset>
