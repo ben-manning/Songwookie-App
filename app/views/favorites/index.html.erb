@@ -35,17 +35,24 @@
   <ul>
     <% @songs.each do |track| %>
       <li class = "results-list">
-        <img src="<%= track.album.images.first['url'] %>"> | <%= track.name %> | <%= track.album.name %> | <%= track.artists.first.name %> | <a href=<%="https://open.spotify.com/track/" + track.id %>>Listen Here</a>
+        <%= track.name %> | <%= track.album.name %> | <%= track.artists.first.name %> 
+        </br>
+        </br>
+         
+        <iframe src=<%="https://embed.spotify.com/?uri=" + track.uri%> width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
 
         <%= form_for @song, url: { controller: :favorites, action: :create }, remote: true do |f| %>
           <%= f.hidden_field :song_name, :value => track.name  %>
           <%= f.hidden_field :artist_name, :value => track.artists.first.name  %>
           <%= f.hidden_field :album_art, :value => track.album.images.first['url'] %>
           <%= f.hidden_field :preview_url, :value => track.uri %>
+          </br>
           <%= f.submit "Favorite" %>
         <% end %>
 
       </li>
+      </br>
+      </br>
     <% end %> 
   </ul>
 </div>
