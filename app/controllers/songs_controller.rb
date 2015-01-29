@@ -5,6 +5,8 @@ class SongsController < ApplicationController
 
   def index
   	@songs = RSpotify::Track.search(params[:song_name])
+
+    @songs = Song.all.order(:cached_votes_up => :desc)
   end
 
   def show
