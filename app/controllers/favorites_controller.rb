@@ -1,9 +1,7 @@
 class FavoritesController < ApplicationController
-  
   before_action :authenticate_user!
-
   def new
-		
+
   end
 
   def index
@@ -14,33 +12,34 @@ class FavoritesController < ApplicationController
   end
 
   def create
-      Song.where(song_params).first_or_create do |song|
+      @song = Song.new(song_params)
 
-     if @song.save 
-         @favorite = Favorite.create(song_id: @song.id, user_id: current_user.id)
-     end
+    if @song.save 
+        @favorite = Favorite.create(song_id: @song.id, user_id: current_user.id)
+    end
 
   
 
     # if @song.save
-    #   favorite = Favorite.create(song_id: @song.id, user_id: current_user.id)
-    #   render json: favorite
+    #  favorite = Favorite.create(song_id: @song.id, user_id: current_user.id)
+    #  render json: favorite
     # else
-    #   render json: @song.errors
+    #  render json: @song.errors
     # end
-   # @song = Song.new(params[:song])
-   # @song.user = current_user
-   # @song.save 
-   # redirect_to user_path(current_user)
+  # @song = Song.new(params[:song])
+  # @song.user = current_user
+  # @song.save 
+  # redirect_to user_path(current_user)
   end
 
   def destroy
+    @song = Song.find params[:id]
+    @song.destroy
+    redirect_to user_path(current_user)
   end
 
-  private
-    def song_params
-      params.require(:song).permit(:song_name, :artist_name, :album_art, :preview_url)
-    end
-
+private
+  def song_params
+    params.require(:song).permit(:song_name, :artist_name, :album_art, :preview_url)
+  end
 end
-

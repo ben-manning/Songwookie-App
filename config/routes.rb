@@ -7,13 +7,13 @@ Rails.application.routes.draw do
     resources :favorites, only: [:index, :new, :create, :destroy]
   end
 
-  resources :songs do
+  resources :songs, only: [:index] do
     member do
       put "upvote" => "songs#upvote"
     end
   end
 
-  get '/songs' => 'songs#index'
+  # get '/songs' => 'songs#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

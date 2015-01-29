@@ -41,22 +41,16 @@
   <% @trending.each do |trend| %>
     <li class = "results-list">
         <img src="<%= trend.album_art %>"> | <%= trend.song_name %> | <%= trend.artist_name %> | <a href=<%="https://open.spotify.com/trend/" + trend.preview_url %>>Listen Here</a>
+              <%= link_to upvote_song_path(:id => trend.id), class: "upvote", method: :put do %>
+                <button type="button" class="btn btn-info" aria-label="Left Align">
+                  <span class="glyphicon glyphicon-thumbs-up glphicon-align-center" aria-hidden="true"></span>
+                  <span class="badge"><%= trend.get_upvotes.size %></span>
+                </button>
+              <% end %>
+
     </li>
   <% end %>
 </ul>
 
 
 
-<!-- https://open.spotify.com/track/
-
-<!-- http://localhost:3000/1tjHKKI0r82IB5KL29whHs -->
-
-<div class="caption" style="text-align:center;">
-  <%= link_to upvote_song_path(song), class: "upvote", method: :put do %>
-    <button type="button" class="btn btn-info" aria-label="Left Align">
-      <span class="glyphicon glyphicon-thumbs-up glphicon-align-center" aria-hidden="true"></span>
-      <span class="badge"><%= song.get_upvotes.size %></span>
-    </button>
-  <% end %>
-
-</div>
