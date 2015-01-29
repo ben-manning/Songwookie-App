@@ -32,12 +32,25 @@
 
 
 
-<div class="favorites-show"></div>
+<div class="favorites-show">
   <% @songs.each do |track| %>
-    <li> 
-        <%= track.song_name %>
-        <%= link_to "Delete", user_favorite_path(current_user, :id => track.id), method: :delete, data: { confirm: "Really?"  } %>
-    </li>
+    <div class="col-md-3 favorite-show-list">
+    <fieldset>
+      <div class = "thumbnail thumb-box" style="height:420px; opacity:0.8;">
+        <h3 style="text-align:center; font-weight:100; color:red"><%= track.song_name %></h3>
+        <%= image_tag(track.album_art, size: "135x180") %>
+
+          <div class="caption" style="text-align:center; font-weight:100; color:black">
+            <h4><%= track.artist_name %></h4>
+
+            <iframe src=<%="https://embed.spotify.com/?uri=" + track.preview_url%> width="225" height="80" frameborder="0" allowtransparency="true" float="center"></iframe>
+
+            <%= link_to "Delete", user_favorite_path(current_user, :id => track.id), method: :delete, :class => "btn btn-warning", data: { confirm: "Really?"  } %>
+          </div>
+      </div>
+     </fieldset>
+    </div>
+  
   <% end %>
 
 </div>

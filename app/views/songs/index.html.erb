@@ -35,15 +35,29 @@
 
 
 
-<h1>Trending!!!!!!</h1>
 
-<ul>
+<div class="trending-show">
   <% @trending.each do |trend| %>
-    <li class = "results-list">
-        <img src="<%= trend.album_art %>"> | <%= trend.song_name %> | <%= trend.artist_name %> | <a href=<%="https://open.spotify.com/trend/" + trend.preview_url %>>Listen Here</a>
-    </li>
+    <div class="col-md-3 trending-show-list">
+    <fieldset>
+      <div class = "thumbnail thumb-box" style="height:420px; opacity:0.8;">
+        <h3 style="text-align:center; font-weight:100; color:red"><%= trend.song_name %></h3>
+        <%= image_tag(trend.album_art, size: "135x180") %>
+
+          <div class="caption" style="text-align:center; font-weight:100; color:black">
+            <h4><%= trend.artist_name %></h4>
+
+            <iframe src=<%="https://embed.spotify.com/?uri=" + trend.preview_url%> width="225" height="80" frameborder="0" allowtransparency="true" float="center"></iframe>
+
+            <%= link_to "Delete", user_favorite_path(current_user, :id => trend.id), method: :delete, :class => "btn btn-warning", data: { confirm: "Really?"  } %>
+          </div>
+      </div>
+      </fieldset>
+    </div>
+  
   <% end %>
-</ul>
+
+</div>
 
 
 

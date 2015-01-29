@@ -180,7 +180,7 @@ p.text-muted {
 	border-right: 1px white solid;
 }
 
-.search-song , .search-list-div , .favorites-show{
+.search-song , .search-list-div , .favorites-show, .trending-show{
 	
 	margin-top: 200px;
 }
