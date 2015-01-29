@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   resources :songs do
     member do
       put "upvote" => "songs#upvote"
-      put "downvote" => "songs#downvote"
     end
   end
 

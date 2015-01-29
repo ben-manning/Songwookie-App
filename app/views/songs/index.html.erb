@@ -59,10 +59,4 @@
     </button>
   <% end %>
 
-  <%= link_to downvote_song_path(song), class: "upvote", method: :put do %>
-    <button type="button" class="btn btn-info" aria-label="Left Align">
-      <span class="glyphicon glyphicon-thumbs-down glphicon-align-center" aria-hidden="true"></span>
-      <span class="badge"><%= song.get_downvotes.size %></span>
-    </button>
-  <% end %>
 </div>
