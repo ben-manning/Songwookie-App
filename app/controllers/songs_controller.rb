@@ -21,5 +21,14 @@ class SongsController < ApplicationController
     redirect_to songs_path
   end
 
+  private
+    def set_song
+      @song = Song.find(params[:id])
+    end
+
+    def song_params
+      params.require(:song).permit(:song_name, :artist_name, :album_art)
+    end
+
 end
 
