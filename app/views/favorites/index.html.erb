@@ -42,10 +42,20 @@
           <%= f.hidden_field :artist_name, :value => track.artists.first.name  %>
           <%= f.hidden_field :album_art, :value => track.album.images.first['url'] %>
           <%= f.hidden_field :preview_url, :value => track.uri %>
-          <%= f.submit "Favorite" %>
+          <%= f.submit "Favorite", :class => "favorite" %>
         <% end %>
 
       </li>
     <% end %> 
   </ul>
 </div>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $(".new_song").on("click",".favorite", function() {
+          console.log("I'm clicking");
+          $(this).closest("li").fadeOut(500);
+      })
+    });
+
+</script>

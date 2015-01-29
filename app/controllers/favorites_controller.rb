@@ -13,10 +13,11 @@ class FavoritesController < ApplicationController
 
   def create
     @song = Song.new(song_params)
-
-    if @song.save
-      @favorite = Favorite.create(song_id: @song.id, user_id: current_user.id)
-    end
+     if @song.save 
+         @favorite = Favorite.create(song_id: @song.id, user_id: current_user.id)
+     end
+  
+  
 
     # if @song.save
     #   favorite = Favorite.create(song_id: @song.id, user_id: current_user.id)
