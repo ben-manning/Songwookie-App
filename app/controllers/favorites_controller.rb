@@ -12,7 +12,7 @@ class FavoritesController < ApplicationController
   end
 
   def create
-      Song.where(song_params).first_or_create do |song|
+      @song = Song.new(song_params)
 
      if @song.save 
          @favorite = Favorite.create(song_id: @song.id, user_id: current_user.id)
@@ -33,11 +33,13 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
+    @song = Song.find params[:id]
+    @song.destroy
+    redirect_to user_path(current_user)
   end
 
 private
   def song_params
     params.require(:song).permit(:song_name, :artist_name, :album_art, :preview_url)
   end
-end
 end
