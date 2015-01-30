@@ -39,11 +39,12 @@ gem 'rspotify'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'bootstrap_form'
 gem 'autoprefixer-rails'
-gem 'pg'
+
 
  # gem 'sqlite3'
 
 group :production do
+  gem 'pg'
     # Heroku uses Postgres in production
   # This gem will make Heroku serve your assets (CSS, JS, etc)
   gem 'rails_12factor'
