@@ -34,7 +34,7 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    @song = Favorite.find(song_id: @song.id, user_id: current_user.id)
+    @song = Song.find params[:id]
     @song.destroy
     # Favorite.delete_all(current_user)
     redirect_to user_path(current_user)
