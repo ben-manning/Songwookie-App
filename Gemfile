@@ -41,6 +41,8 @@ gem 'bootstrap_form'
 gem 'autoprefixer-rails'
 gem 'pg'
 
+ # gem 'sqlite3'
+
 group :production do
     # Heroku uses Postgres in production
   # This gem will make Heroku serve your assets (CSS, JS, etc)

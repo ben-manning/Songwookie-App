@@ -30,37 +30,41 @@
 </nav>
 
 <div class="search-list-div">
-  <h1>Tracks Matching <%= params[:song_name] %></h1>
-
-  <ul>
+  <div class="search-heading-show">
+    <h1>Tracks Matching <%= params[:song_name] %></h1>
+  </div>
+  <!-- <ul> -->
     <% @songs.each do |track| %>
-      <li class = "results-list">
-        <%= track.name %> | <%= track.album.name %> | <%= track.artists.first.name %> 
-        </br>
-        </br>
-         
-        <iframe src=<%="https://embed.spotify.com/?uri=" + track.uri%> width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
-
-        <%= form_for @song, url: { controller: :favorites, action: :create }, remote: true do |f| %>
-          <%= f.hidden_field :song_name, :value => track.name  %>
-          <%= f.hidden_field :artist_name, :value => track.artists.first.name  %>
-          <%= f.hidden_field :album_art, :value => track.album.images.first['url'] %>
-          <%= f.hidden_field :preview_url, :value => track.uri %>
+    
+      <div class="col-md-4 well results-list">
+       <!--  <li class = "results-list"> -->
+          <%= track.name %> | <%= track.album.name %> | <%= track.artists.first.name %> 
           </br>
-          <%= f.submit "Favorite", :class => "favorite" %>
-        <% end %>
-      </li>
-      </br>
-      </br>
+          </br>
+           
+          <iframe src=<%="https://embed.spotify.com/?uri=" + track.uri%> width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+
+          <%= form_for @song, url: { controller: :favorites, action: :create }, remote: true do |f| %>
+            <%= f.hidden_field :song_name, :value => track.name  %>
+            <%= f.hidden_field :artist_name, :value => track.artists.first.name  %>
+            <%= f.hidden_field :album_art, :value => track.album.images.first['url'] %>
+            <%= f.hidden_field :preview_url, :value => track.uri %>
+            </br>
+            <%= f.submit "Favorite", :class => "favorite" %>
+          <% end %>
+        <!-- </li> -->
+        
+        </div>
+    
     <% end %> 
-  </ul>
+  <!-- </ul> -->
 </div>
 
 <script type="text/javascript">
 $(document).ready(function () {
-    $(".new_song").on("click",".favorite", function() {
+    $(".results-list").on("click",".favorite", function() {
           console.log("I'm clicking");
-          $(this).closest("li").fadeOut(500);
+          $(this).fadeOut(500);
       })
     });
 
