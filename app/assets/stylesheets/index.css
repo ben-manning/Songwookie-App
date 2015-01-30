@@ -1,14 +1,14 @@
 
-body{ 
+body { 
 	padding-top: 50px;
-background-image: url(headphone.jpg);
-background-position: center;
--webkit-animation: fadein 2s;
+	background-image: url(headphone.jpg);
+	background-position: center;
+	-webkit-animation: fadein 2s;
 }
 
 @-webkit-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 .app_name {
@@ -16,13 +16,15 @@ background-position: center;
 	font-weight: 100;
 	color: white;
 }
-.navbar{ opacity: 0.7;
-height: 180px;
-font-size: 20px;
-font-weight: 100}
 
-.navbar li{
-	
+.navbar { 
+	opacity: 0.7;
+	height: 180px;
+	font-size: 20px;
+	font-weight: 100
+}
+
+.navbar li {
 	margin-top: 20px;
 }
 
@@ -57,7 +59,8 @@ font-weight: 100}
 
 }*/
 
-.welcome{	font-size: 50px;
+.welcome {	
+	font-size: 50px;
 	font-weight: 100;
 	color: yellow;
 	margin-bottom: 20px;
@@ -79,14 +82,12 @@ p.text-muted {
 	color: white;
 	opacity: 1;
 	font-weight: 100;
-	
-	
-
 }
+
+
 .text-muted:hover {
 	font-weight: bold;
 	font-color: red;
-
 }
 
 /*.searchpanel {
