@@ -31,22 +31,6 @@
 </nav>
 <% end %>
 
-
-<h1>Search Matching <%= params[:song_name] %></h1>
-
-<ul>
-	<% @songs.each do |track| %>
-		<li><%= track.name %> 
-		</br>
-		</br><iframe src=<%="https://embed.spotify.com/?uri=" + track.uri%> width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
-		</li>
-		</br>
-		</br>
-	<% end %>	
-</ul>
-
-
-
 <div class="trending-show">
   <% @trending.each do |trend| %>
     <div class="col-md-3 trending-show-list">
