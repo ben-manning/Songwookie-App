@@ -12,10 +12,10 @@ class FavoritesController < ApplicationController
   end
 
   def create
-      @song = Song.new(song_params)
+    @song = Song.where(song_params).first_or_initialize
 
-    if @song.save 
-        @favorite = Favorite.create(song_id: @song.id, user_id: current_user.id)
+    if @song.save
+      @favorite = Favorite.create(song_id: @song.id, user_id: current_user.id)
     end
 
   
@@ -33,8 +33,9 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    @song = Song.find params[:id]
+    @song = Favorite.find(song_id: , user_id: current_user.id)
     @song.destroy
+    # Favorite.delete_all(current_user)
     redirect_to user_path(current_user)
   end
 
