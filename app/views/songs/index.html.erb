@@ -36,7 +36,7 @@
 
 <ul>
 	<% @songs.each do |track| %>
-		<li><%= track.name %> 
+		<li><%= track.song_name %> 
 		</br>
 		</br><iframe src=<%="https://embed.spotify.com/?uri=" + track.uri%> width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
 		</li>
