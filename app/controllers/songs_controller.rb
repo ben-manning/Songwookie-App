@@ -4,7 +4,7 @@ class SongsController < ApplicationController
   before_action :set_song, only: [:upvote]
 
   def index
-    @trending = Song.all.sample(4)
+    @trending = Song.all.sample(10)
     @songs = Song.all.order(cached_votes_up: :desc)
   end
 

@@ -39,7 +39,9 @@ gem 'rspotify'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'bootstrap_form'
 gem 'autoprefixer-rails'
-gem 'pg'
+# gem 'pg'
+
+ gem 'sqlite3'
 
 group :production do
     # Heroku uses Postgres in production

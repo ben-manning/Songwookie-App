@@ -31,11 +31,11 @@
 
 <div class="search-song row">
   <fieldset>
-     <div class="col-md-4 panel">
+     <div class="col-md-6 col-md-offset-3 panel searchpanel panel-default">
         <div class="panel-heading">
-            <h1>Welcome to SongWookie search for a song</h1>
+            <h3>Search for a song!!</h3>
         </div>
-        <%= bootstrap_form_tag user_favorites_path, method: "get" do %>
+        <%= form_tag user_favorites_path, method: "get" , class: "input" do %>
         <%= text_field_tag(:song_name) %>
         <%= submit_tag("Search") %>
       <% end %>

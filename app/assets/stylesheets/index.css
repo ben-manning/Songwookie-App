@@ -17,11 +17,12 @@ body {
   to   { opacity: 1; }
 }
 
-.app_name {
-	font-size: 50px;
+/*.app_name {
+	font-size: 70px;
 	font-weight: 100;
 	color: white;
-}
+
+}*/
 
 .navbar { 
 	opacity: 0.7;
@@ -70,12 +71,14 @@ body {
 	font-weight: 100;
 	color: yellow;
 	margin-bottom: 20px;
+	 z-index: 1;
 }
 
 .app_name {
-	font-size: 55px;
-	font-weight: 150;
+	font-size: 70px;
+	font-weight: 200;
 	color: white;
+	z-index: 1;
 }
 
 .footer {
@@ -96,32 +99,35 @@ p.text-muted {
 	font-color: red;
 }
 
-/*.searchpanel {
-	opacity: 0.5;
-	background-color: black;
-	padding: 10px;
-	margin-top: 20px;
+.searchpanel {
+	opacity: 0.7;
+	background:black;
+	padding:0px;
+	margin-top: 10px;
 	border: 5px solid white;
+	text-align: center;
 }
 .searchpanel h3 {
-	padding: 10px;
+	/*padding: 10px;*/
 	opacity: 1;
-	font-size: 30px;
-	color: white;
+	font-size: 50px;
+	color: blue;
 	font-weight: 200;
 
 
 }
 
 .searchpanel input {
-	opacity: 0.8;
+	opacity: 0.9;
 	padding: 5px;
 	color: black;
 	font-weight: bold;
+	margin-bottom: 20px;
+	margin-top: 20px;
 
 }
 
-.searchpanel h3:hover {
+/*.searchpanel h3:hover {
 	font-weight: 300;
 	font-size: 35px;
 	font-decoration: none;
@@ -189,7 +195,35 @@ p.text-muted {
 	margin-top: 200px;
 }
 
-.results-list img {
-	height: 50px;
+.results-list {
+	height: 300px;
+	opacity: 0.8;
+	font-weight: 100;
+	font-size: 20px;
 }
+
+.results-list .favorite {
+	margin-bottom: 10px;
+	
+	margin-left: 125px;
+
+}
+
+.search-heading-show, .search-heading-show h1 , .trending-heading-show , .favorite-heading-show{
+	background-color: black;
+	opacity: 0.8;
+	color: white;
+	text-align: center;
+	font-size: 50px;
+	font-weight: 100;
+}
+
+.trending-heading-show h1 , .favorite-heading-show h1{
+	color: white;
+	text-align: center;
+	font-size: 100px;
+	font-weight: 100;
+}
+
+
 
