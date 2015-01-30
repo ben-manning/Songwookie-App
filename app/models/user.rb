@@ -1,13 +1,15 @@
 class User < ActiveRecord::Base
   acts_as_voter
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+
+  # Associations
   has_many :favorites
   has_many :songs, :through => :favorites
 
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
-	#validates :username, presence: true
-	#validates :email,     presence: true
-	#validates :password,  presence: true
+  # Validations
+	# validates :username, presence: true
 end

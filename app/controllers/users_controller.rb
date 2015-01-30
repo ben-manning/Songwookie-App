@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
   def show
-    @songs = current_user.songs
+    @favorites = current_user.favorites
   end
 end
