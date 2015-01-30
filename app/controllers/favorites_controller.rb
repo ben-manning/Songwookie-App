@@ -45,3 +45,4 @@ private
     params.require(:song).permit(:song_name, :artist_name, :album_art, :preview_url)
   end
 end
+
