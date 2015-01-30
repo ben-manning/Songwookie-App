@@ -30,8 +30,9 @@ private
     params.require(:song).permit(:song_name, :artist_name, :album_art, :preview_url)
   end
 
-  def set_song
+  def set_favorite
     @favorite = Favorite.find(params[:id])
   end
+
 end
 
