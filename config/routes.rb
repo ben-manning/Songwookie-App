@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  
   root 'welcome#index'
   get '/welcome/index' => 'welcome#index' 
 
@@ -7,7 +8,13 @@ Rails.application.routes.draw do
   resources :favorites, only: [:index, :new, :create, :destroy]
   end
 
-  get '/songs' => 'songs#index'
+  resources :songs, only: [:index] do
+    member do
+      put "upvote" => "songs#upvote"
+    end
+  end
+
+  # get '/songs' => 'songs#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
