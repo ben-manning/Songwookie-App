@@ -1,19 +1,32 @@
 Rails.application.routes.draw do
   devise_for :users
+  
   root 'welcome#index'
   get '/welcome/index' => 'welcome#index' 
 
   resources :users, only: :show do
-    resources :favorites, only: [:new, :create, :destroy]
+  resources :favorites, only: [:index, :new, :create, :destroy]
   end
 
-  get '/songs' => 'songs#index'
+  resources :songs, only: [:index] do
+    member do
+      put "upvote" => "songs#upvote"
+    end
+  end
+
+  # get '/songs' => 'songs#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  #root 'welcome#index'
+  # Here we would replace the following with get '/songs', to: 'songs#index'
+  ##get '/songs', to: 'songs#index'
+
+  # Here we would replace the following with get '/songs/:id' to: 'songs/show, as 'song'
+  #get '/songs/:id', to:'songs#show', as: 'song'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
