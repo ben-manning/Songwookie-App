@@ -52,7 +52,10 @@
               <%= link_to "Delete", user_favorite_path(current_user, :id => trend.id), method: :delete, :class => "btn btn-warning btn-left", data: { confirm: "Really?"  } %>
 
               <%= link_to upvote_song_path(:id => trend.id), class: "upvote btn btn-info btn-right", method: :put do %>
-                 <span class="badge"><%= trend.get_upvotes.size %></span>
+                <button type="button" class="btn btn-info" aria-label="Left Align">
+                  <span class="glyphicon glyphicon-thumbs-up glphicon-align-center" aria-hidden="true"></span>
+                  <span class="badge"><%= trend.get_upvotes.size %></span>
+                </button>
               <% end %> 
             </div> 
           </div>
