@@ -1,14 +1,14 @@
 class FavoritesController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_favorite, only: :destroy
   def new
 		@favorite = Favorite.new(user_id: params[:user_id])
     authorize @favorite
   end
-
+ 
+ 
   def index
-    #RSpotify.authenticate("<2d492c018da541dfab1478cb2655dcaf>", "<2f77d68b97024008977eaa13ab6711a4>")
     @songs = RSpotify::Track.search(params[:song_name])
-    #@song = RSpotify::Track.find(params[:id])
     @song = Song.new
   end
 
@@ -18,30 +18,21 @@ class FavoritesController < ApplicationController
     if @song.save
       @favorite = Favorite.create(song_id: @song.id, user_id: current_user.id)
     end
-
-  
-
-    # if @song.save
-    #  favorite = Favorite.create(song_id: @song.id, user_id: current_user.id)
-    #  render json: favorite
-    # else
-    #  render json: @song.errors
-    # end
-  # @song = Song.new(params[:song])
-  # @song.user = current_user
-  # @song.save 
-  # redirect_to user_path(current_user)
   end
 
   def destroy
-    @song = Favorite.find(song_id: @song.id, user_id: current_user.id)
-    @song.destroy
-    # Favorite.delete_all(current_user)
-    redirect_to user_path(current_user)
+    @favorite.destroy
+    redirect_to current_user
   end
 
 private
   def song_params
     params.require(:song).permit(:song_name, :artist_name, :album_art, :preview_url)
   end
+
+  def set_favorite
+    @favorite = Favorite.find(params[:id])
+  end
+
 end
+

@@ -1,0 +1,16 @@
+<div class="col-md-3 favorite-show-list">
+	<fieldset>
+		<div class="thumbnail thumb-box" style="height:420px; opacity:0.8;">
+			<h3 style="text-align:center; font-weight:100; color:red"><%= favorite.song.song_name %></h3>
+			<%= image_tag favorite.song.album_art, size: "135x180" %>
+
+			<div class="caption" style="text-align:center; font-weight:100; color:black">
+				<h4><%= favorite.song.artist_name %></h4>
+
+				<iframe src="<%="https://embed.spotify.com/?uri=" + favorite.song.preview_url%>" width="225" height="80" frameborder="0" allowtransparency="true" float="center"></iframe>
+
+				<%= link_to "Delete", user_favorite_path(current_user, favorite), method: :delete, class: "btn btn-warning", data: { confirm: "Really?"  } %>
+			</div>
+		</div>
+	</fieldset>
+</div>
