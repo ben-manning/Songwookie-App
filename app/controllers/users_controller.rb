@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
-	def index
-	end
+  def show
+    @songs = current_user.songs
+  end
 end

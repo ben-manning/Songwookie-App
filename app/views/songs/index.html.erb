@@ -1,13 +1,78 @@
+<% if user_signed_in? %>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">Song Wookie!</a>
+        </div>
+        <div id="navbar profile" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav pull-right">
 
-<h1>Tracks Matching <%= params[:song_name] %></h1>
+          <li> <%=link_to("Home", user_path(current_user))  %>
+
+          </li>
+
+          <li> <%=link_to("Trending Music!", songs_path)  %>
+           
+          </li>
+
+          <li> <%=link_to("Add favorites!", new_user_favorite_path(current_user))  %>
+           
+          </li>
+
+          <% if user_signed_in? %>
+          <li>
+            <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+          </li>
+          
+          <% end %>
+        </ul>
+        </div>
+      </div>
+</nav>
+<% end %>
+
+
+<h1>Search Matching <%= params[:song_name] %></h1>
 
 <ul>
 	<% @songs.each do |track| %>
-		<li><%= track.name %> | <a href=<%="https://open.spotify.com/track/" + track.id %>>Listen Here</a>
+		<li><%= track.name %> 
+		</br>
+		</br><iframe src=<%="https://embed.spotify.com/?uri=" + track.uri%> width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
 		</li>
+		</br>
+		</br>
 	<% end %>	
 </ul>
 
-<!-- https://open.spotify.com/track/ -->
 
-<!-- http://localhost:3000/1tjHKKI0r82IB5KL29whHs -->
+
+<div class="trending-show">
+  <% @trending.each do |trend| %>
+    <div class="col-md-3 trending-show-list">
+    <fieldset>
+      <div class = "thumbnail thumb-box" style="height:420px; opacity:0.8;">
+        <h3 style="text-align:center; font-weight:100; color:red"><%= trend.song_name %></h3>
+        <%= image_tag(trend.album_art, size: "135x180") %>
+
+          <div class="caption" style="text-align:center; font-weight:100; color:black">
+            <h4><%= trend.artist_name %></h4>
+
+            <iframe src=<%="https://embed.spotify.com/?uri=" + trend.preview_url%> width="225" height="80" frameborder="0" allowtransparency="true" float="center"></iframe>
+            <div class ="trending-buttons" style="margin-top: 15px;">
+
+              <%= link_to upvote_song_path(:id => trend.id), class: "upvote btn btn-info btn-right", method: :put do %>
+                <button type="button" class="btn btn-info" aria-label="Left Align">
+                  <span class="glyphicon glyphicon-thumbs-up glphicon-align-center" aria-hidden="true"></span>
+                  <span class="badge"><%= trend.get_upvotes.size %></span>
+                </button>
+              <% end %> 
+            </div> 
+          </div>
+      </div>
+      </fieldset>
+    </div>
+  
+  <% end %>
+
+</div>
