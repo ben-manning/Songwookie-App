@@ -1,28 +1,11 @@
-== README
+SongWookie
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the second project of the General Assembly Web Development Immersive in San Francisco.  
 
-Things you may want to cover:
+A user can create an account in order to search songs, save favorite songs, and vote on popular songs as recommended by other users.
 
-* Ruby version
+This application was built using Ruby on Rails, Bootstrap, AJAX, and the Spotify API.
 
-* System dependencies
+Finally, this was a group collaboration between Walter Pardo (Pardo7), Abhishek Bhan (abhishekbhan), Carlos Ponce (jcp510), and Ben Manning (ben-manning).
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+If you would like to take a look at house the application works, please visit: https://songwookie.herokuapp.com/
